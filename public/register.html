@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#6257D9">
+  <title>Create account | Recall</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/auth.css">
+</head>
+<body>
+  <main class="auth-shell">
+    <a class="brand" href="index.html" aria-label="Recall home">
+      <span class="brand-mark"><span></span><span></span><span></span></span>
+      <span>recall<span class="brand-dot">.</span></span>
+    </a>
+
+    <section class="auth-layout signup-layout">
+      <div class="auth-intro">
+        <span class="eyebrow"><span class="eyebrow-dot"></span> MAKE YOUR STUDY TIME COUNT</span>
+        <h1>A clearer way<br>to <span>stay on track.</span></h1>
+        <p>Build better study habits with one simple space for everything you're learning.</p>
+        <div class="benefit-list">
+          <div><span class="benefit-icon">✓</span><span><b>Stay organised</b><small>Keep courses, notes and tasks together.</small></span></div>
+          <div><span class="benefit-icon">✓</span><span><b>Revise with purpose</b><small>Use flashcards to strengthen recall.</small></span></div>
+          <div><span class="benefit-icon">✓</span><span><b>See your progress</b><small>Know what you've covered and what's next.</small></span></div>
+        </div>
+        <p class="intro-foot">Learn it. Track it. Remember it.</p>
+      </div>
+
+      <div class="auth-card signup-card">
+        <div class="card-heading">
+          <span class="mobile-eyebrow">GET STARTED</span>
+          <h2>Create your account</h2>
+          <p>Start building a study routine that works for you.</p>
+        </div>
+        <form id="signup-form" novalidate>
+          <label for="full-name">Full name</label>
+          <div class="field-wrap"><span class="field-icon">♙</span><input id="full-name" name="fullName" type="text" placeholder="Your full name" autocomplete="name" required></div>
+          <div class="field-error" data-error-for="full-name"></div>
+
+          <label for="signup-email">Email address</label>
+          <div class="field-wrap"><span class="field-icon">✉</span><input id="signup-email" name="email" type="email" placeholder="you@example.com" autocomplete="email" required></div>
+          <div class="field-error" data-error-for="signup-email"></div>
+
+          <label for="signup-password">Password</label>
+          <div class="field-wrap"><span class="field-icon lock-icon">▣</span><input id="signup-password" name="password" type="password" placeholder="At least 8 characters" autocomplete="new-password" required><button class="password-toggle" type="button" aria-label="Show password" data-toggle="signup-password">Show</button></div>
+          <div class="field-error" data-error-for="signup-password"></div>
+          <div class="password-hint" id="password-hint">Use at least 8 characters.</div>
+
+          <label for="confirm-password">Confirm password</label>
+          <div class="field-wrap"><span class="field-icon lock-icon">▣</span><input id="confirm-password" name="confirmPassword" type="password" placeholder="Re-enter your password" autocomplete="new-password" required><button class="password-toggle" type="button" aria-label="Show password" data-toggle="confirm-password">Show</button></div>
+          <div class="field-error" data-error-for="confirm-password"></div>
+
+          <label class="check-row"><input type="checkbox" id="terms" required><span>I agree to the <a href="#">Terms</a> and <a href="#">Privacy Policy</a>.</span></label>
+          <div class="field-error" data-error-for="terms"></div>
+
+          <button class="submit-btn" type="submit">Create account <span aria-hidden="true">→</span></button>
+          <p class="form-message" id="form-message" role="status"></p>
+        </form>
+        <p class="switch-auth">Already have an account? <a href="login.html">Sign in</a></p>
+        <p class="legal-note">Your learning workspace, all in one place.</p>
+      </div>
+    </section>
+    <footer class="page-footer"><span>© 2026 Recall</span><span>Built for better learning.</span></footer>
+  </main>
+  <script src="js/auth.js"></script>
+</body>
+</html>

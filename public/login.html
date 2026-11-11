@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#6257D9">
+  <title>Sign in | Recall</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/auth.css">
+</head>
+<body>
+  <main class="auth-shell">
+    <a class="brand" href="index.html" aria-label="Recall home">
+      <span class="brand-mark"><span></span><span></span><span></span></span>
+      <span>recall<span class="brand-dot">.</span></span>
+    </a>
+
+    <section class="auth-layout">
+      <div class="auth-intro">
+        <span class="eyebrow"><span class="eyebrow-dot"></span> YOUR LEARNING, IN ONE PLACE</span>
+        <h1>Good to have<br>you <span>back.</span></h1>
+        <p>Pick up where you left off. Your courses, notes and next revision session are waiting.</p>
+        <div class="mini-preview" aria-hidden="true">
+          <div class="preview-top"><span class="preview-title">Your learning overview</span><span class="preview-pill">This week</span></div>
+          <div class="preview-stats">
+            <div><strong>08</strong><small>Active courses</small></div>
+            <div><strong>24</strong><small>Topics covered</small></div>
+            <div><strong>06</strong><small>Due this week</small></div>
+          </div>
+          <div class="preview-progress"><div><span>Weekly study goal</span><b>72%</b></div><span class="progress-track"><i></i></span></div>
+        </div>
+        <p class="intro-foot">Learn it. Track it. Remember it.</p>
+      </div>
+
+      <div class="auth-card">
+        <div class="card-heading">
+          <span class="mobile-eyebrow">WELCOME BACK</span>
+          <h2>Sign in to Recall</h2>
+          <p>Enter your details to access your workspace.</p>
+        </div>
+        <form id="signin-form" novalidate>
+          <label for="email">Email address</label>
+          <div class="field-wrap"><span class="field-icon">✉</span><input id="email" name="email" type="email" placeholder="you@example.com" autocomplete="email" required></div>
+          <div class="field-error" data-error-for="email"></div>
+
+          <div class="label-row"><label for="password">Password</label><a href="#" class="text-link" id="forgot-link">Forgot password?</a></div>
+          <div class="field-wrap"><span class="field-icon lock-icon">▣</span><input id="password" name="password" type="password" placeholder="Enter your password" autocomplete="current-password" required><button class="password-toggle" type="button" aria-label="Show password" data-toggle="password">Show</button></div>
+          <div class="field-error" data-error-for="password"></div>
+
+          <button class="submit-btn" type="submit">Sign in <span aria-hidden="true">→</span></button>
+          <p class="form-message" id="form-message" role="status"></p>
+        </form>
+        <p class="switch-auth">Don't have an account? <a href="register.html">Create an account</a></p>
+        <p class="legal-note">By continuing, you agree to Recall's <a href="#">Terms</a> and <a href="#">Privacy Policy</a>.</p>
+      </div>
+    </section>
+    <footer class="page-footer"><span>© 2026 Recall</span><span>Built for better learning.</span></footer>
+  </main>
+  <script src="js/auth.js"></script>
+</body>
+</html>

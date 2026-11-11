@@ -1,0 +1,268 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recall | Student Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+
+  <aside class="sidebar">
+    <a href="#" class="brand"><span class="brand-icon">R</span> Recall</a>
+
+    <p class="nav-label">WORKSPACE</p>
+    <nav class="nav-links">
+      <button class="nav-link active" data-page="overview"><span>▦</span> Overview</button>
+      <button class="nav-link" data-page="assignments"><span>✓</span> Assignments</button>
+      <button class="nav-link" data-page="courses"><span>▤</span> Courses</button>
+      <button class="nav-link" data-page="flashcards"><span>▣</span> Flashcards</button>
+      <button class="nav-link" data-page="notes"><span>▧</span> Notes</button>
+    </nav>
+
+    <p class="nav-label settings-label">PREFERENCES</p>
+    <nav class="nav-links">
+      <button class="nav-link" data-page="settings"><span>⚙</span> Settings</button>
+    </nav>
+
+    <div class="sidebar-bottom">
+      <div class="profile-avatar">O</div>
+      <div class="profile-info">
+        <strong>Student Account</strong>
+        <small>Personal workspace</small>
+      </div>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">STUDENT WORKSPACE</p>
+        <h1 id="page-title">Overview</h1>
+      </div>
+      <div class="topbar-right">
+        <span class="date-label" id="current-date"></span>
+        <div class="top-avatar">O</div>
+      </div>
+    </header>
+
+    <!-- OVERVIEW -->
+    <section class="page active" id="overview">
+      <div class="welcome-banner">
+        <div>
+          <p class="eyebrow light">YOUR LEARNING SPACE</p>
+          <h2>Keep making progress.</h2>
+          <p>Small, consistent steps make a difference. Let's get something done today.</p>
+        </div>
+        <div class="welcome-mark">R</div>
+      </div>
+
+      <div class="stats-grid">
+        <article class="stat-card">
+          <span class="stat-icon purple">▤</span>
+          <p>Active courses</p>
+          <h3 id="stat-courses">5</h3>
+          <small>Your current courses</small>
+        </article>
+        <article class="stat-card">
+          <span class="stat-icon green">✓</span>
+          <p>Completed tasks</p>
+          <h3 id="stat-completed">8</h3>
+          <small>Assignments completed</small>
+        </article>
+        <article class="stat-card">
+          <span class="stat-icon orange">◷</span>
+          <p>Pending tasks</p>
+          <h3 id="stat-pending">3</h3>
+          <small>Still need your attention</small>
+        </article>
+        <article class="stat-card">
+          <span class="stat-icon blue">▣</span>
+          <p>Study sessions</p>
+          <h3>12</h3>
+          <small>This week</small>
+        </article>
+      </div>
+
+      <div class="content-grid">
+        <article class="panel">
+          <div class="panel-heading">
+            <div>
+              <h3>Course progress</h3>
+              <p>Track how far you've gone</p>
+            </div>
+            <button class="text-button" data-goto="courses">View all</button>
+          </div>
+          <div id="overview-courses" class="progress-list"></div>
+        </article>
+
+        <article class="panel">
+          <div class="panel-heading">
+            <div>
+              <h3>Today's focus</h3>
+              <p>A simple plan for today</p>
+            </div>
+          </div>
+          <div class="focus-list">
+            <div class="focus-item">
+              <span class="focus-dot purple-dot"></span>
+              <div><strong>Review lecture notes</strong><small>MTH 101 · 30 minutes</small></div>
+            </div>
+            <div class="focus-item">
+              <span class="focus-dot orange-dot"></span>
+              <div><strong>Practice vector questions</strong><small>MTH 103 · 45 minutes</small></div>
+            </div>
+            <div class="focus-item">
+              <span class="focus-dot green-dot"></span>
+              <div><strong>Revise flashcards</strong><small>General revision · 15 minutes</small></div>
+            </div>
+          </div>
+          <button class="primary-button full-button" data-goto="flashcards">Start revising</button>
+        </article>
+      </div>
+
+      <article class="panel upcoming-panel">
+        <div class="panel-heading">
+          <div><h3>Upcoming assignments</h3><p>Keep an eye on your deadlines</p></div>
+          <button class="text-button" data-goto="assignments">View all</button>
+        </div>
+        <div id="overview-assignments"></div>
+      </article>
+    </section>
+
+    <!-- ASSIGNMENTS -->
+    <section class="page" id="assignments">
+      <div class="page-intro">
+        <div><h2>Assignments</h2><p>Organize your academic tasks and deadlines.</p></div>
+        <button class="primary-button" id="add-assignment">+ Add assignment</button>
+      </div>
+
+      <div class="stats-grid compact-stats">
+        <article class="stat-card"><p>Total assignments</p><h3 id="assignment-total">4</h3></article>
+        <article class="stat-card"><p>Completed</p><h3 id="assignment-done">1</h3></article>
+        <article class="stat-card"><p>Pending</p><h3 id="assignment-pending">3</h3></article>
+      </div>
+
+      <article class="panel">
+        <div class="panel-heading">
+          <div><h3>All assignments</h3><p>Mark a task complete when you're done.</p></div>
+        </div>
+        <div id="assignment-list" class="assignment-list"></div>
+      </article>
+    </section>
+
+    <!-- COURSES -->
+    <section class="page" id="courses">
+      <div class="page-intro">
+        <div><h2>My courses</h2><p>Keep your courses and learning progress organized.</p></div>
+        <button class="primary-button" id="add-course">+ Add course</button>
+      </div>
+      <div id="course-grid" class="course-grid"></div>
+    </section>
+
+    <!-- FLASHCARDS -->
+    <section class="page" id="flashcards">
+      <div class="page-intro">
+        <div><h2>Flashcards</h2><p>Test your memory and strengthen what you've learned.</p></div>
+      </div>
+
+      <div class="flashcard-area">
+        <div class="flashcard-meta">
+          <span id="flashcard-counter">Card 1 of 4</span>
+          <span class="tag">MTH 103</span>
+        </div>
+        <button class="flashcard" id="flashcard">
+          <span class="card-side-label" id="card-side-label">QUESTION</span>
+          <span class="flashcard-content" id="flashcard-content">What is a vector?</span>
+          <span class="flip-hint">Click to reveal answer</span>
+        </button>
+        <div class="flashcard-controls">
+          <button class="secondary-button" id="previous-card">Previous</button>
+          <button class="secondary-button" id="next-card">Next card →</button>
+        </div>
+        <div class="difficulty-controls">
+          <p>How well did you remember?</p>
+          <div>
+            <button class="difficulty difficult" data-difficulty="Difficult">Difficult</button>
+            <button class="difficulty medium" data-difficulty="Medium">Medium</button>
+            <button class="difficulty easy" data-difficulty="Easy">Easy</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NOTES -->
+    <section class="page" id="notes">
+      <div class="page-intro">
+        <div><h2>Lecture notes</h2><p>Your notes, organized in one place.</p></div>
+        <button class="primary-button" id="add-note">+ New note</button>
+      </div>
+      <div class="notes-toolbar">
+        <input type="search" id="note-search" placeholder="Search your notes...">
+        <select id="note-filter">
+          <option value="all">All courses</option>
+          <option value="MTH 101">MTH 101</option>
+          <option value="MTH 103">MTH 103</option>
+          <option value="PHY 101">PHY 101</option>
+          <option value="TCS 101">TCS 101</option>
+        </select>
+      </div>
+      <div id="notes-grid" class="notes-grid"></div>
+    </section>
+
+    <!-- SETTINGS -->
+    <section class="page" id="settings">
+      <div class="page-intro">
+        <div><h2>Settings</h2><p>Manage your account and learning preferences.</p></div>
+      </div>
+
+      <article class="panel settings-panel">
+        <div class="settings-heading"><h3>Profile information</h3><p>Basic information about your account.</p></div>
+        <label class="field-label">Display name</label>
+        <input class="settings-input" id="display-name" value="Student Account">
+        <label class="field-label">Email address</label>
+        <input class="settings-input" id="display-email" type="email" placeholder="student@example.com">
+        <button class="primary-button" id="save-profile">Save changes</button>
+      </article>
+
+      <article class="panel settings-panel">
+        <div class="settings-heading"><h3>Study preferences</h3><p>Customize your study experience.</p></div>
+        <label class="field-label">Daily study goal</label>
+        <select class="settings-input" id="study-goal">
+          <option>1 hour</option><option selected>2 hours</option>
+          <option>3 hours</option><option>4 hours</option>
+        </select>
+        <label class="field-label">Reminder preference</label>
+        <select class="settings-input" id="reminder">
+          <option>Off</option><option selected>Daily</option><option>Weekly</option>
+        </select>
+        <button class="primary-button" id="save-preferences">Save preferences</button>
+      </article>
+
+      <article class="panel settings-panel">
+        <div class="settings-heading"><h3>About Recall</h3><p>Learn it. Track it. Remember it.</p></div>
+        <p class="muted">Recall helps students manage courses, lecture notes, flashcards, assignments and study progress.</p>
+        <p class="muted">Version 1.0 · Frontend prototype</p>
+      </article>
+    </section>
+
+    <footer class="footer">Recall · Learn it. Track it. Remember it.</footer>
+  </main>
+
+  <!-- MOBILE BOTTOM NAVIGATION -->
+  <nav class="mobile-nav">
+    <button class="mobile-link active" data-page="overview"><span>▦</span><small>Home</small></button>
+    <button class="mobile-link" data-page="assignments"><span>✓</span><small>Tasks</small></button>
+    <button class="mobile-link" data-page="courses"><span>▤</span><small>Courses</small></button>
+    <button class="mobile-link" data-page="flashcards"><span>▣</span><small>Cards</small></button>
+    <button class="mobile-link" data-page="notes"><span>▧</span><small>Notes</small></button>
+    <button class="mobile-link" data-page="settings"><span>⚙</span><small>Settings</small></button>
+  </nav>
+
+  <script src="js/dashboard.js"></script>
+</body>
+</html>
